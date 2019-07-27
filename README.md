@@ -1,3 +1,3 @@
 # fsd-salary
 Spring Boot + Vue
-![Image description]
+![Image description](../demo.png)
