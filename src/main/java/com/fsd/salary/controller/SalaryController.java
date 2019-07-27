@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,7 @@ import com.fsd.salary.utils.Prediction;
 
 @RestController
 public class SalaryController {
-
+	@CrossOrigin(origins = "http://localhost:8081")
 	@PostMapping(path = "/increase", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<RspModel> increase(@RequestBody Salary salary) {
 
@@ -52,7 +53,7 @@ public class SalaryController {
 
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:8081")
 	@PostMapping(path = "/decrease", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<RspModel> decrease(@RequestBody Salary salary) {
 
@@ -87,7 +88,7 @@ public class SalaryController {
 		return new ResponseEntity<RspModel>(rsp, HttpStatus.OK);
 
 	}
-	
+	@CrossOrigin(origins = "http://localhost:8081")
 	@PostMapping(path = "/predict", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<RspModel> predict(@RequestBody Salary salary) {
 
